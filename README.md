@@ -24,3 +24,8 @@
 5. Teraz w home_screen.dart `import 'package:hive_ce_flutter/hive_flutter.dart';` - bez tego box nie
    będzie miał metody 'listenable()'.
 6. Użyj 'ValueListenableBuilder' by uzyskać dostęp do boxa.
+
+## Usunięcie komentarzy
+
+Wyszukaj i zastąp: command+R
+Regex dla komentarzy: \/\/.*  #.*

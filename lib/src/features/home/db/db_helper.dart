@@ -15,13 +15,27 @@ class DBHelper {
   int? getFromDB() {
     final box = Hive.box<CounterModel>(BoxName.boxName);
     if (box.isNotEmpty) {
-      return box
-          .get(CounterBoxKey.counterBoxKey)
-          ?.value;
+      return box.get(CounterBoxKey.counterBoxKey)?.value;
     } else {
       return 0;
     }
   }
+
+  // pozwala obserwować zawartość boxa dla CounterModel
+  // ValueListenable<Box<CounterModel>> counterListenable() {
+  //   final box = Hive.box<CounterModel>(BoxNames.boxName);
+  //   if (box.isEmpty) {
+  //     box.add(CounterModel.create(name: 0));
+  //   }
+  //   return box.listenable();
+  // }
+  // ValueListenable<Box<User>>? userListenable() {
+  //   final box = Hive.box<User>(BoxNames.userBox);
+  //   if (box.isEmpty) {
+  //     return null;
+  //   }
+  //   return box.listenable();
+  // }
 }
 
 @riverpod

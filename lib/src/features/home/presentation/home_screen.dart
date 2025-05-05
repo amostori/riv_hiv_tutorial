@@ -19,17 +19,17 @@ class HomeScreen extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('You have pushed button this many times: $counter'),
-            ValueListenableBuilder<Box<CounterModel>>(
-              valueListenable:
-                  Hive.box<CounterModel>(BoxName.boxName).listenable(),
-              builder: (BuildContext context, counterBox, Widget? child) {
-                return Text(
-                  counterBox.isNotEmpty
-                      ? '${counterBox.get(CounterBoxKey.counterBoxKey)?.value}'
-                      : '0',
-                );
-              },
-            ),
+            // ValueListenableBuilder<Box<CounterModel>>(
+            //   valueListenable:
+            //       Hive.box<CounterModel>(BoxName.boxName).listenable(),
+            //   builder: (BuildContext context, counterBox, Widget? child) {
+            //     return Text(
+            //       counterBox.isNotEmpty
+            //           ? '${counterBox.get(CounterBoxKey.counterBoxKey)?.value}'
+            //           : '0',
+            //     );
+            //   },
+            // )
           ],
         ),
       ),
